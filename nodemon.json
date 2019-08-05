@@ -1,0 +1,11 @@
+{
+    "verbose": true,
+    "ext": "js",
+    "ignore": ["*.spec.js", "node_modules", ".git"],
+    "execMap": {
+        "js": "npm start"
+    },
+    "env": {
+        "NODE_ENV": "development"
+    }
+}
