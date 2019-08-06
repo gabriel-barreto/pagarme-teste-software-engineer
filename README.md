@@ -52,8 +52,6 @@ Nesse desafio você construirá uma versão super simplificada de um Payment Ser
 
 **4. Run**
 
-_This step isn`t necessary if you're using this boilerplate docker containers_
-
 > _**To run in development mode:**_
 >
 > $ yarn dev
@@ -67,16 +65,16 @@ _This step isn`t necessary if you're using this boilerplate docker containers_
 
 > $ curl http://127.0.0.1:5000/api/run
 
-
-**Optional: Run test suite**
-
-> $ yarn test
-
 **Expected Response:**
 
 ```json
 { "message": "Hello World!" }
 ```
+
+**Optional: Run test suite**
+
+> $ yarn test
+
 
 **6. Before Modify**
 
