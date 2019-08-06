@@ -1,0 +1,135 @@
+_type: export
+__export_format: 4
+__export_date: 2019-08-06T07:34:46.283Z
+__export_source: insomnia.desktop.app:v6.5.4
+resources:
+  - _id: req_5762e8b1011b4a8abe45f3e5c869ccb4
+    authentication: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"value": 500.00,
+        	"description": "Headset",
+        	"paymentMethod": "credit_card",
+        	"card": {
+        		"name": "GABRIEL G BARRETO",
+        		"number": "4040505060600777",
+        		"expirationDate": "02-01-2024"
+        	}
+        }
+    created: 1564987367909
+    description: ""
+    headers:
+      - id: pair_b6c829ea7429458cac20304426a92a0a
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1564987367909
+    method: POST
+    modified: 1565074196125
+    name: Create
+    parameters: []
+    parentId: fld_1e63223005e14372a3a098810436cafe
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:5000/api/transactions
+    _type: request
+  - _id: fld_1e63223005e14372a3a098810436cafe
+    created: 1564987358558
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1564987358558
+    modified: 1564987358558
+    name: Transactions
+    parentId: fld_c9ab045200254198ad42bc9f9fd43f9a
+    _type: request_group
+  - _id: fld_c9ab045200254198ad42bc9f9fd43f9a
+    created: 1564985366650
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1564985366650
+    modified: 1564985366650
+    name: Pagar.me
+    parentId: wrk_a529fe00ff524eaca0b2471fab6a267c
+    _type: request_group
+  - _id: wrk_a529fe00ff524eaca0b2471fab6a267c
+    created: 1564272322368
+    description: ""
+    modified: 1564272322368
+    name: Insomnia
+    parentId: null
+    _type: workspace
+  - _id: req_5170f9118c0140c78aabe4d8dfe9d39c
+    authentication: {}
+    body: {}
+    created: 1564985931958
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1564985931958
+    method: GET
+    modified: 1564986230767
+    name: Statement
+    parameters: []
+    parentId: fld_16b87bb8987042adbe7e064bbe926a7b
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:5000/api/payables/statement
+    _type: request
+  - _id: fld_16b87bb8987042adbe7e064bbe926a7b
+    created: 1564985376687
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1564985376687
+    modified: 1564985376687
+    name: Payables
+    parentId: fld_c9ab045200254198ad42bc9f9fd43f9a
+    _type: request_group
+  - _id: req_24f37ba0f0df439fa416335ab5fc3a2b
+    authentication: {}
+    body: {}
+    created: 1564985387139
+    description: ""
+    headers: []
+    isPrivate: false
+    metaSortKey: -1564985387139
+    method: GET
+    modified: 1564985403231
+    name: Balance
+    parameters: []
+    parentId: fld_16b87bb8987042adbe7e064bbe926a7b
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: http://localhost:5000/api/payables/balance
+    _type: request
+  - _id: env_e174e6a85260e11e599259221d3fc5d3fe95e004
+    color: null
+    created: 1564272322432
+    data: {}
+    dataPropertyOrder: null
+    isPrivate: false
+    metaSortKey: 1564272322432
+    modified: 1564272322432
+    name: Base Environment
+    parentId: wrk_a529fe00ff524eaca0b2471fab6a267c
+    _type: environment
+  - _id: jar_e174e6a85260e11e599259221d3fc5d3fe95e004
+    cookies: []
+    created: 1564272322436
+    modified: 1564272322436
+    name: Default Jar
+    parentId: wrk_a529fe00ff524eaca0b2471fab6a267c
+    _type: cookie_jar
