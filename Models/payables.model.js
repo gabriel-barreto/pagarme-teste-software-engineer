@@ -7,10 +7,8 @@ const payableSchema = new Schema({
         enum: ['paid', 'waiting_funds'],
     },
     transaction: {
-        type: String,
-        default: 'Transaction-XXX',
-        // type: mongoose.Schema.Types.ObjectId,
-        // ref: 'Transaction',
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Transaction',
         required: true,
     },
     value: {
