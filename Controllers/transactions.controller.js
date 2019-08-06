@@ -9,6 +9,9 @@ const create = async (req, res) => {
         return responses.success(res, transaction);
     } catch (ex) {
         console.log(ex);
+
+        if (ex.name == 'ValidationError')
+            return responses.badRequest(res, { message: ex.message });
         return responses.internalError(res, ex);
     }
 };
