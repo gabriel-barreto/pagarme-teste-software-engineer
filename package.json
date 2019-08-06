@@ -3,6 +3,10 @@
     "version": "1.1.0",
     "description": "A Boilerplate to build powerful API using NodeJS + Express + Mongoose",
     "main": "app.js",
+    "engines": {
+        "node": "12.6.0",
+        "npm": "6.9.0"
+    },
     "scripts": {
         "dev": "nodemon",
         "dev:factory": "node ./Factory",
