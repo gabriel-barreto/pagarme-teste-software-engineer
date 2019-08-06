@@ -6,7 +6,6 @@ const create = payload => {
         return target.substring(target.length - 4, target.length);
     };
     const cardNumber = hideCardNumber(payload);
-    console.log(cardNumber);
 
     return transactions.create({
         ...payload,
