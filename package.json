@@ -8,7 +8,7 @@
         "dev:factory": "node ./Factory",
         "build": "rimraf ./bin && rollup -c ./rollup.config.js",
         "start": "npm run build && node ./bin/app.js",
-        "test": "jest"
+        "test": "cross-env NODE_ENV=development jest"
     },
     "repository": {
         "type": "git",
@@ -42,7 +42,7 @@
         "@babel/cli": "^7.4.4",
         "@babel/core": "^7.4.5",
         "@babel/polyfill": "^7.4.4",
-        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-env": "^7.5.5",
         "chai": "^4.2.0",
         "eslint": "^5.16.0",
         "eslint-config-airbnb-base": "^13.1.0",
