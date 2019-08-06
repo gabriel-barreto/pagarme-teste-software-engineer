@@ -1,63 +1,76 @@
-# NodeMongo API Boilerplate
-
-_Node + Express + Mongoose_
-
-This boilerplate aux you to build a powerful API using MongoDB and NodeJS!
+# Teste Pagar.me - Software Engineer - August/2019
 
 ## Guide
 
-- [NodeMongo API Boilerplate](#NodeMongo-API-Boilerplate)
-  - [Guide](#Guide)
-  - [Requirements](#Requirements)
-    - [Recomended](#Recomended)
-  - [Usage](#Usage)
-  - [License](#License)
-  - [Enjoy and Contributing](#Enjoy-and-Contributing)
-  - [QA](#QA)
+- [Teste Pagar.me - Software Engineer - August/2019](#teste-pagarme---software-engineer---august2019)
+  - [Guide](#guide)
+  - [Challenge](#challenge)
+  - [Stack](#stack)
+  - [Requirements](#requirements)
+  - [Usage](#usage)
+  - [Endpoints](#endpoints)
+    - [Transactions](#transactions)
+    - [Payables](#payables)
+  - [License](#license)
+  - [Enjoy and Contributing](#enjoy-and-contributing)
+  - [QA](#qa)
+
+## Challenge
+Nesse desafio você construirá uma versão super simplificada de um Payment Service Provider (PSP) como o Pagar.me e talvez aprender um pouco mais sobre como funcionam pagamentos no Brasil.
+
+[See more](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
+
+## Stack
+- Docker
+- Node
+- Express
+- MongoDB
+- Mongoose
 
 ## Requirements
 
-### Recomended
-
--   MongoDB ^3.6.4
--   Node ^8.11.4
--   NPM ^5.6.0
+-   MongoDB 4.0.11
+-   Node 12.6.0
 
 ## Usage
 
 **1. Clone this repo**
 
-> $ git clone git@github.com/gabriel-barreto/nodemongo-api-boilerplate.git
+> $ git clone git@github.com/[gabriel-barreto/pagarme-teste-software-engineer.git](https://github.com/gabriel-barreto/pagarme-teste-software-engineer)
 
-**2. Install all dependencies**
+**2. Build database container**
 
-_Obs.: Run this command inside cloned folder_
+> $ docker-compose up --build -d
+>
+> _You can also running it outside from a docker container, to do that change URI in __Config/mongo.config.js___
 
-> $ npm install
+**3. Install all dependencies**
+
 > $ yarn install
-
-**2. Run test suite**
-
-> $ npm test
-> $ yarn test
+>
+> _Obs.: Run this command inside cloned folder_
 
 **4. Run**
 
 _This step isn`t necessary if you're using this boilerplate docker containers_
 
-> $ npm run dev
+> _**To run in development mode:**_
 >
-> _To run in development mode_
+> $ yarn dev
 
-> $ npm start
+
+> _**To run in production mode:**_
 >
-> _To run in production mode_
+> $ yarn start
 
 **5. Verify**
 
-_If you're running out from container use port 5000 instead 5555_
-
 > $ curl http://127.0.0.1:5000/api/run
+
+
+**Optional: Run test suite**
+
+> $ yarn test
 
 **Expected Response:**
 
@@ -72,6 +85,35 @@ _This going to restart the boilerplate repo, remove old commits, link with this 
 > $ rm -Rf .git
 >
 > $ git init
+
+## Endpoints
+
+You can make requests by your own, but I'd left a file named `insomnia-requests.yml` in the root of project folder, in that file you can find all requests to make easier to see responses.
+
+To use it, you need to install [Insomnia](https://insomnia.rest/download/), a nice tool to make HTTP requests.
+
+### Transactions
+
+  - Create
+      - Registers a new transaction and create a payable with transaction's correspondents info.
+        - method: **POST**,
+        - path: _/transactions_
+
+### Payables
+
+  - Balance
+    - Returns the paid and waiting funds total of payables.
+      - method: **GET**
+      - path: _/balance_
+  - Statement
+    - Returns all entries of payables, you can filter by a since date.
+      - method: **GET**,
+      - path: _/statement/**:sinceDate?**_
+      - params:
+        - sinceDate:
+          - Type: String,
+          - Formate: "MM-DD-YYYY"
+
 
 ## License
 
