@@ -18,7 +18,7 @@ const getStatement = async (req, res) => {
     }
 };
 
-const getBalance = async (req, res) => {
+const getBalance = async (_, res) => {
     try {
         const payload = await payables.getBalance();
         return responses.success(res, payload);
